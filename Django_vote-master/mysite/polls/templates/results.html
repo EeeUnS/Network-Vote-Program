@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Network Assignment </title>
+    <link rel="stylesheet" href="../../../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC">
+</head>
+<ul id="page-top">
+    <nav class="navbar navbar-light navbar-expand-md navbar navbar-expand-lg fixed-top" id="mainNav" style="font-size: 10px;height: 91px;width: 1880px;">
+        <div class="container"><a class="navbar-brand js-scroll-trigger" href="#" style="font-size: 18px;font-family: 'Alegreya Sans SC', sans-serif;height: 43px;width: 181px;margin: -352px;">COMPUTER-NETWORK CLASS</a><button class="navbar-toggler navbar-toggler-right" data-toggle="collapse"
+                data-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link active js-scroll-trigger" href="#about" style="font-size: 12px;font-family: 'Alegreya Sans SC', sans-serif;">About</a></li>
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="#download" style="font-size: 12px;font-family: 'Alegreya Sans SC', sans-serif;">Vote</a></li>
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation" style="height: 32px;"><a class="nav-link js-scroll-trigger" href="#contact" style="font-size: 12px;font-family: 'Alegreya Sans SC', sans-serif;padding: 8px;margin: 0px;height: 55px;">contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead" style="background-image:url('../../../static/pic/main.jpg');">
+        <div class="intro-body" style="height: 543px;width: 1158px;">
+            <div class="container">
+                <div class="row" style="height: 537px;width: 1156px;">
+                    <div class="col-lg-8 mx-auto" style="width: 739px;height: 400px;margin: 25px;">
+                        <h1 class="brand-heading" style="font-size: 86px;font-family: 'Alegreya Sans SC', sans-serif;height: 110px;width: 743px;">travel concept</h1>
+                        <p class="intro-text" style="height: 104px;padding: -15px;margin: 72px;width: 627px;font-family: 'Alegreya Sans SC', sans-serif;">Where do you want to go?<br>Just vote place where you want to go -<br><br></p><a class="btn btn-link btn-circle" role="button" href="#about" style="height: 58px;width: 59px;padding: 6px;"><i class="fa fa-angle-double-down animated"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <ul id="download" class="download-section content-section text-center" style="background-image:url('../static/pic/main.jpg');"></ul>
+        <div class="container" >
+            <div class="col-lg-8 mx-auto" >
+                     <h1>{{ question.question_text }}</h1>
+                <ul>
+                    {% for choice in question.choice_set.all %}
+                    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+                    {% endfor %}
+                </ul>
+                <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+            </div>
+        </div>
+    </ul>
+    </section>
+
+    <section id="contact" class="content-section text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>Contact us</h2>
+                    <p>서비스 및 페이지와 관련하여 문의하고싶으신 내용이 있으시면 <br>이곳으로 문의해주시면 감사하겠습니다.</p>
+                    <ul class="list-inline banner-social-buttons">
+                        <li class="list-inline-item">&nbsp;<button class="btn btn-primary btn-lg btn-default" type="button"><i class="fa fa-google fa-fw"></i><span class="network-name">&nbsp; gmail</span></button></li>
+                        <li class="list-inline-item">&nbsp;<button class="btn btn-primary btn-lg btn-default" type="button"><i class="fa fa-instagram fa-fw"></i><span class="network-name">instagram</span></button></li>
+                        <li class="list-inline-item">&nbsp;<button class="btn btn-primary btn-lg btn-default" type="button"><i class="fa fa-github fa-fw"></i><span class="network-name">&nbsp;github</span></button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</head>
+  <body>
+    <footer>
+        <div class="container text-center">
+            <p>Copyright © Computer Network 2018</p>
+        </div>
+    </footer>
+    <script src="../../../static/js/grayscale.js"></script>
+    <script src="../../../static/js/bootstrap.min.js"></script>
+    <script src="../../../static/js/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+</body>
+
+</html>
